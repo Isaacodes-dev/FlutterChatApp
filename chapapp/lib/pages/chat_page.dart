@@ -1,3 +1,4 @@
+import 'package:chapapp/components/chat_bubble.dart';
 import 'package:chapapp/components/my_text_field.dart';
 import 'package:chapapp/services/chat/chat_service.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -83,7 +84,8 @@ class _ChatPageState extends State<ChatPage> {
           : CrossAxisAlignment.start,
           children: [
             Text(data['senderEmail']),
-            Text(data['message'])
+            const SizedBox(height: 5),
+            ChatBubble(message: data['message']),
           ]
           ),
       ),
